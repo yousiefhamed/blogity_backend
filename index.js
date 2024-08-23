@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 const connectDB = require("./config/db");
 const blogRoutes = require("./routes/blogRoutes");
+const usersRoutes = require("./routes/usersRoutes");
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ app.use(cors());
 
 // Blog Routes
 app.use("/api/blogs", blogRoutes);
+app.use("/api/users", usersRoutes);
 
 const PORT = process.env.PORT || 5000;
 
